@@ -1,0 +1,152 @@
+﻿@model IEnumerable<WebScadaPlatform.Models.TagGroupModel>
+
+@{
+    ViewBag.Title = "墒情";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    内黄县墒情气象分布
+                </div>
+                <!-- .panel-heading -->
+                <div class="panel-body">
+                    <div class="panel-group" id="accordion">
+                        @foreach (var group in Model)
+                        {
+                            <div class="panel panel-info">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#@group.Id">@group.Name</a>
+                                    </h4>
+                                </div>
+                                <div id="@group.Id" class="panel-collapse collapse in">
+                                    <div class="panel-body">
+                                        @foreach (var tag in group.Tags)
+                                        {
+                                            <div class="infobox infobox-blue">
+                                                <div class="infobox-icon">
+                                                    <div class="@tag.Extensions"></div>
+                                                </div>
+                                                <div class="infobox-data">
+                                                    <span class="infobox-data-number" id="@tag.Id">@tag.Value</span>
+                                                    <div class="infobox-content">@tag.Name</div>
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+
+
+                        @*<div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">城关镇</a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </div>
+                        </div>
+                    </div>*@
+                    </div>
+                </div>
+                <!-- .panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+
+
+
+
+
+
+    <!--
+
+    <script>
+        !function () {
+            jQuery(function ($) {
+                //jquery accordion
+                $("#accordion").accordion({
+                    collapsible: true,
+                    heightStyle: "content",
+                    animate: 250,
+                    header: ".accordion-header"
+                }).sortable({
+                    axis: "y",
+                    handle: ".accordion-header",
+                    stop: function (event, ui) {
+                        // IE doesn't register the blur when sorting
+                        // so trigger focusout handlers to remove .ui-state-focus
+                        ui.item.children(".accordion-header").triggerHandler("focusout");
+                    }
+                });
+
+            });
+            $(function () {
+                var data;
+                initRealTime();
+                function initRealTime() {
+                    titleBindStyle();
+                }
+                function G(id) {
+                    return document.getElementById(id);
+                }
+                function numTostr(n, s) {
+                    if (s == undefined) {
+                        s = "0000";//5个0
+                    }
+                    s = s + n;
+                    s = s.slice(-4, s.length);//截取最后5个字符
+                    // console.log(s);
+                    return s;
+                }
+                refreshItemValues();
+                setInterval(refreshItemValues, 2000);
+                function refreshItemValues() {
+                    $.get('../api/RealTime2', function (result) {
+                        console.log(result, result.length, "realtime200000000000000000");
+                        data = result;
+                        renderHtml();
+                        // setTimeout(refreshItemValues, 2000);
+                    });
+                }
+                function renderHtml() {
+                    var dataUnit = ["%RH", "%RH", "%RH", "%RH", "%RH", "%RH", "°C", "%RH", "%RH", "%RH", "°C", "%RH", "%RH", "%RH", "°C", "%RH", "%RH", "%RH", "%RH", "%RH", "%RH", "%RH", "%RH", "%RH", "%RH", "%RH", "%RH", "%RH", "%RH", "%RH", "%RH", "%RH", "%RH", "%RH", "%RH", "MPa", "", "", "", "", "", "", "", "Lux", "m/s", "度", "°C", "%RH", "ppm", "mm"];
+                    for (var i = 0; i < 230; i++) {
+                        //if (dataUnit[i]) {
+                        //    G("value" + numTostr(Number(i+78 + 1))).innerHTML = data[(i+78)] + "&nbsp;" + dataUnit[i];
+                        //}
+                        //else {
+                        //    G("value" + numTostr(Number(i +78+ 1))).innerHTML = data[(i+78)] + "&nbsp;";
+                        //}
+                        G("value" + numTostr(Number(i + 78 + 1))).innerHTML = data[(i + 78 + 2)] + "&nbsp;";
+                    }
+                    i = 0;
+                }
+                function titleBindStyle() {
+                    $("div[id^=\"wrap\"]").mouseover(function (e) {
+                        var id = $(this).attr("id");
+                        $("#" + id + " " + "h4").addClass("scale-title");
+                    });
+                    $("div[id^=\"wrap\"]").mouseout(function (e) {
+                        var id = $(this).attr("id");
+                        $("#" + id + " " + "h4").removeClass("scale-title");
+                    });
+                }
+            });//ready
+        }();//!
+
+    </script>
+
+    -->

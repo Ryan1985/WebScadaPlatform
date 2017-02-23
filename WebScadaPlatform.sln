@@ -5,6 +5,10 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebScadaPlatform", "WebScadaPlatform\WebScadaPlatform.csproj", "{CEE973D5-3804-40BF-89DC-F3E48DA3FFFC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebScadaPlatform.BLL", "WebScadaPlatform.BLL\WebScadaPlatform.BLL.csproj", "{26897922-11FD-4F0D-984A-8D383B08B5A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebScadaPlatform.DAL", "WebScadaPlatform.DAL\WebScadaPlatform.DAL.csproj", "{A2CA9917-DBFE-46E2-BCBA-EC3AC25D62D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{CEE973D5-3804-40BF-89DC-F3E48DA3FFFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEE973D5-3804-40BF-89DC-F3E48DA3FFFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEE973D5-3804-40BF-89DC-F3E48DA3FFFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26897922-11FD-4F0D-984A-8D383B08B5A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26897922-11FD-4F0D-984A-8D383B08B5A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26897922-11FD-4F0D-984A-8D383B08B5A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26897922-11FD-4F0D-984A-8D383B08B5A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2CA9917-DBFE-46E2-BCBA-EC3AC25D62D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2CA9917-DBFE-46E2-BCBA-EC3AC25D62D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2CA9917-DBFE-46E2-BCBA-EC3AC25D62D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2CA9917-DBFE-46E2-BCBA-EC3AC25D62D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

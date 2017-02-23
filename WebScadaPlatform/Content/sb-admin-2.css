@@ -123,6 +123,11 @@ body {
     padding-left: 37px;
 }
 
+.sidebar .nav-second-level li a i {
+    margin-right:5px;
+}
+
+
 .sidebar .nav-third-level li a {
     padding-left: 52px;
 }
