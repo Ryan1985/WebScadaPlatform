@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Collections;
 
 namespace WebScadaPlatform.Domain
 {
@@ -79,8 +80,85 @@ namespace WebScadaPlatform.Domain
             group.Tags = new List<TagModel>();
 
             var tag = new TagModel();
-            tag.Extensions = "svgIcon svg-PressureRight";
+            tag.Extensions = new Hashtable
+            {
+            { "PanelColor", "green" },
+              { "Icon", "svgIcon svg-Pressure" },
+            };
             tag.Name = "城关水厂.压力1";
+            tag.Id = "value0079";
+            tag.Value = "1111";
+
+            group.Tags.Add(tag);
+
+
+            tag = new TagModel();
+            tag.Extensions = new Hashtable
+            {
+            { "PanelColor", "green" },
+              { "Icon", "svgIcon svg-Pressure" },
+            };
+            tag.Name = "康庄.压力2";
+            tag.Id = "value0079";
+            tag.Value = "1111";
+
+            group.Tags.Add(tag);
+
+            tag = new TagModel();
+            tag.Extensions = new Hashtable
+            {
+            { "PanelColor", "green" },
+              { "Icon", "svgIcon svg-Pressure" },
+            };
+            tag.Name = "西长固.压力3";
+            tag.Id = "value0079";
+            tag.Value = "1111";
+
+            group.Tags.Add(tag);
+
+            tag = new TagModel();
+            tag.Extensions = new Hashtable
+            {
+            { "PanelColor", "green" },
+              { "Icon", "svgIcon svg-Pressure" },
+            };
+            tag.Name = "北仗保.压力4";
+            tag.Id = "value0079";
+            tag.Value = "1111";
+
+            group.Tags.Add(tag);
+
+            tag = new TagModel();
+            tag.Extensions = new Hashtable
+            { 
+            { "PanelColor", "green" },
+              { "Icon", "svgIcon svg-Pressure" },
+            };
+            tag.Name = "南长固.压力5";
+            tag.Id = "value0079";
+            tag.Value = "1111";
+
+            group.Tags.Add(tag);
+
+            tag = new TagModel();
+            tag.Extensions = new Hashtable
+            {
+                { "PanelColor", "yellow" },
+                {"Icon","svgIcon svg-Flow"},
+            };
+            tag.Name = "瞬时流量1";
+            tag.Id = "value0079";
+            tag.Value = "1111";
+
+            group.Tags.Add(tag);
+
+            tag = new TagModel();
+            tag.Extensions = new Hashtable
+            { 
+                { "PanelColor", "yellow" },
+                {"Icon","svgIcon svg-Flow"},
+            };
+            tag.Name = "瞬时流量2";
             tag.Id = "value0079";
             tag.Value = "1111";
 

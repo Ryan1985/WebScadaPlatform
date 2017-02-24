@@ -1,9 +1,13 @@
 ﻿@model IEnumerable<WebScadaPlatform.Models.TagGroupModel>
 
-@{
-    ViewBag.Title = "墒情";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+    @{
+        ViewBag.Title = "墒情";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+
+
+   <link href="~/Content/logo.css" rel="stylesheet" />
 
 
     <div class="row">
@@ -15,6 +19,7 @@
                 <!-- .panel-heading -->
                 <div class="panel-body">
                     <div class="panel-group" id="accordion">
+
                         @foreach (var group in Model)
                         {
                             <div class="panel panel-info">
@@ -25,18 +30,28 @@
                                 </div>
                                 <div id="@group.Id" class="panel-collapse collapse in">
                                     <div class="panel-body">
-                                        @foreach (var tag in group.Tags)
-                                        {
-                                            <div class="infobox infobox-blue">
-                                                <div class="infobox-icon">
-                                                    <div class="@tag.Extensions"></div>
+                                        <div class="row">
+                                            @foreach (var tag in group.Tags)
+                                            {
+                                                <div class="col-lg-3 col-md-6">
+                                                    <div class='panel panel-@tag.Extensions["PanelColor"]' style="margin-bottom:20px">
+                                                        <div class="panel-heading">
+                                                            <div class="row">
+                                                                <div class="col-xs-3">
+                                                                    <div class='@tag.Extensions["Icon"]'>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-xs-9 text-right">
+                                                                    <div class="huge">@tag.Value</div>
+                                                                    <div>@tag.Name</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div class="infobox-data">
-                                                    <span class="infobox-data-number" id="@tag.Id">@tag.Value</span>
-                                                    <div class="infobox-content">@tag.Name</div>
-                                                </div>
-                                            </div>
-                                        }
+                                            }
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -44,18 +59,79 @@
 
 
 
+
+                        @*<div class="panel panel-info">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#id1">ttt</a>
+                                    </h4>
+                                </div>
+                                <div id="id1" class="panel-collapse collapse in">
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-6">
+                                                <div class="panel panel-primary">
+                                                    <div class="panel-heading">
+                                                        <div class="row">
+                                                            <div class="col-xs-3">
+                                                                <i class="fa fa-comments fa-5x"></i>
+                                                            </div>
+                                                            <div class="col-xs-9 text-right">
+                                                                <div class="huge">26</div>
+                                                                <div>New Comments!</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>*@
+
+
+
+                        @*@foreach (var group in Model)
+                            {
+                                <div class="panel panel-info">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#@group.Id">@group.Name</a>
+                                        </h4>
+                                    </div>
+                                    <div id="@group.Id" class="panel-collapse collapse in">
+                                        <div class="panel-body">
+                                            @foreach (var tag in group.Tags)
+                                            {
+                                                <div class="infobox infobox-blue">
+                                                    <div class="infobox-icon">
+                                                        <div class="@tag.Extensions"></div>
+                                                    </div>
+                                                    <div class="infobox-data">
+                                                        <span class="infobox-data-number" id="@tag.Id">@tag.Value</span>
+                                                        <div class="infobox-content">@tag.Name</div>
+                                                    </div>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            }*@
+
+
+
                         @*<div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">城关镇</a>
-                            </h4>
-                        </div>
-                        <div id="collapseOne" class="panel-collapse collapse in">
-                            <div class="panel-body">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </div>
-                        </div>
-                    </div>*@
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">城关镇</a>
+                                    </h4>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse in">
+                                    <div class="panel-body">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    </div>
+                                </div>
+                            </div>*@
                     </div>
                 </div>
                 <!-- .panel-body -->

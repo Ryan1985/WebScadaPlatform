@@ -1,0 +1,34 @@
+﻿.svgIcon {
+    width: 80px;
+    height: 80px;
+    background-size: 80px 80px;
+}
+
+
+.svg-Pressure{
+    background-image:url("../img/Pressure.svg");
+}
+
+.svg-EFlow{
+    background-image:url("../img/EFlow.svg");
+}
+
+.svg-EQuantity{
+    background-image:url("../img/EQuantity.svg");
+}
+
+.svg-EVolumn{
+    background-image:url("../img/EVolumn.svg");
+}
+
+.svg-Flow{
+    background-image:url("../img/Flow.svg");
+}
+
+.svg-Power{
+    background-image:url("../img/Power.svg");
+}
+
+.svg-Speed{
+    background-image:url("../img/Speed.svg");
+}
